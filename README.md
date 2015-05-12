@@ -1,12 +1,12 @@
-# Docker Exec Image: R
+# Docker Exec Image: s
 
-A Dockerfile describing an container capable of executing R source files.
+A Dockerfile describing an container capable of executing s source files.
 
 # Build
 
 ```sh
 git clone https://github.com/docker-exec/r.git
-docker build -t dexec/r .
+docker build -t dexec/lang-r .
 ```
 
 # Usage
@@ -16,7 +16,7 @@ In a directory containing a script e.g. foo.r, run:
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.r:/tmp/dexec/build/foo.r \
-    dexec/r foo.r
+    dexec/lang-r foo.r
 ```
 
 ## Passing arguments to the script
@@ -34,7 +34,7 @@ Each argument passed must be prefixed in this way, e.g.
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.r:/tmp/dexec/build/foo.r \
-    dexec/r foo.r \
+    dexec/lang-r foo.r \
     --arg='hello world' \
     --arg=foo \
     --arg=bar
